@@ -1,0 +1,5 @@
+{
+  "name": "guarded-shore-16190",
+  "image": "heroku/ruby",
+  "addons": []
+}

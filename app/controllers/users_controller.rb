@@ -30,9 +30,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        UserMailer.singup_notification(@user).deliver
         format.html { redirect_to login_url, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        UserMailer.singup_notification(@user).deliver
 
       else
         format.html { render :new }
