@@ -39,4 +39,6 @@ Versionamento: Github. Deploy: Heroku.
 * Equipe
 
 Douglas Torres
+
+
 Rodrigo Sávio
