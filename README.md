@@ -11,6 +11,11 @@ agenda focada na praticidade. Interface simples e minimalista, onde a principal 
 anotações e rascunhos de forma rápida e eficiente. Facilitando também a sua visualização. Segue
 abaixo uma captura de tela com um modelo de layout no qual pretendemos seguir:
 
+Funcionalidades:
+CRUD Compromissos (Adiciona, Remove , Edita os compromissos e os exibe no calenario)
+CRUD Usuários (Adiciona, edita e remover usários)
+Login 
+
 * Utilização de recursos:
 
 ETAPA I (90%):
