@@ -1,0 +1,22 @@
+"pt-br":
+    
+    actions:
+    new: "Novo"
+    destroy: "Destruir"
+
+    models:
+    users:
+    attributes:
+    users:
+    name: "Nome"
+    email: "Email"
+    password: "Senha"
+    password_confirmation: "Confirmação de senha"
+
+    models:
+    compromissos:
+    attributes:
+    compromissos:
+    titulo: "Titulo"
+    texto: "Texto"
+    date: "Data"

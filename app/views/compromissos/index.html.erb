@@ -1,57 +1,55 @@
-<p id="notice"><%= notice %></p>
-
-
+<%- model_class = Compromisso -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
 <div id="calendar">
 <h2 id="month">
-    <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
-    <%=h @date.strftime("%B %Y") %>
-    <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
-  </h2>
-  <%= calendar_for @compromissos, :year => @date.year, :month => @date.month do |t| %>
-  <%= t.head('DOM','SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB') %>
-  <%= t.day do |day, compromissos| %>
-  <%= day.day %>
-  <% compromissos.each do |compromisso| %>
-  <%= link_to h(compromisso.titulo), compromisso %><br>
-  <%= link_to 'Editar', edit_compromisso_path(compromisso) %> | <%= link_to 'Deletar', compromisso, method: :delete, data: { confirm: 'Tem certeza?' } %>
-  <% end %>
-  <% end %>
-  <% end %>
+<%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
+<%=h @date.strftime("%B %Y") %>
+<%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
+</h2>
+<%= calendar_for @compromissos, :year => @date.year, :month => @date.month do |t| %>
+<%= t.head('DOM','SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB') %>
+<%= t.day do |day, compromissos| %>
+<%= day.day %>
+<% compromissos.each do |compromisso| %><br>
+<%= link_to h(compromisso.titulo), compromisso %><br>
+<%= link_to 'Editar', edit_compromisso_path(compromisso) %> | <%= link_to 'Deletar', compromisso, method: :delete, data: { confirm: 'Tem certeza?' } %>
+<% end %>
+<% end %>
+<% end %>
 </div>
-<%= link_to 'Novo Compromisso', new_compromisso_path %>
-
-
-<h1>Compromissos</h1>
-
-
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Titulo</th>
-      <th>Texto</th>
-      <th>Date</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:titulo) %></th>
+      <th><%= model_class.human_attribute_name(:texto) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @compromissos.each do |compromisso| %>
       <tr>
         <td><%= compromisso.titulo %></td>
         <td><%= compromisso.texto %></td>
         <td><%= compromisso.date %></td>
-        <td><%= link_to 'Show', compromisso %></td>
-        <td><%= link_to 'Edit', edit_compromisso_path(compromisso) %></td>
-        <td><%= link_to 'Destroy', compromisso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_compromisso_path(compromisso), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      compromisso_path(compromisso),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-
-
-<%= link_to 'New Compromisso', new_compromisso_path %>
-<%= link_to 'logout', :controller => "sessions", :action => "destroy" %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_compromisso_path,
+            :class => 'btn btn-primary' %>
+<button type="button" class="btn btn-danger"><%= link_to 'logout', :controller => "sessions", :action => "destroy" %></button>
+<button type="button" class="btn btn-danger"><%= link_to 'Listar Usuários', users_path  %></button>
