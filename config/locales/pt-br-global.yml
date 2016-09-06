@@ -1,0 +1,17 @@
+"pt-BR":
+
+  #Global
+  register: "Cadastrar"
+  home: "Início"
+  user: "Usuário"
+  logout: "Sair"
+  login: "Entrar"
+  welcome: "Bem vindo,"
+  name: "Nome"
+  password: "Senha"
+  of: "do"
+  _date: "Data"
+  value: "Valor"
+  email: "Email"
+  delete: "Excluir"
+  search: "Pesquisar"

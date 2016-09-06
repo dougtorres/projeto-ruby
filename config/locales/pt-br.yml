@@ -1,22 +1,20 @@
-"pt-br":
-    
-    actions:
-    new: "Novo"
-    destroy: "Destruir"
-
+"pt-BR":
+  activerecord:
     models:
-    users:
+      user: Usuário
+      compromisso: compromisso
     attributes:
-    users:
-    name: "Nome"
-    email: "Email"
-    password: "Senha"
-    password_confirmation: "Confirmação de senha"
-
-    models:
-    compromissos:
-    attributes:
-    compromissos:
-    titulo: "Titulo"
-    texto: "Texto"
-    date: "Data"
+      user:
+        id: "Identificador"
+        name: "Nome"
+        email: "Email"
+        password: "Senha"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      compromisso:
+        id: "Identificador"
+        titulo: "Titulo"
+        texto: "Texto"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      
